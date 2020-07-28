@@ -1,0 +1,27 @@
+# File validator0.toml
+
+[parity]
+chain = "spec.json"
+base_path = "validator0"
+
+[network]
+port = 30300
+bootnodes = ["enode://0b2514d11ae94da465845fef100311d5518f0c4051a4eded1d1ae3d6ae90390056281944cc7032658293533f02fa6c7281d9975d8030fb1e86af166a925b3327@10.0.39.89:30300",#validator0
+"enode://3af9ca85ea37e2ee2067b8b0493e1dd06e85ec8ee0c1a67fec4d5d722d2ce1a280c3b2d6500a4655336d253f74b5b1c5344730f4568fce367288b6e8f87c1bc6@10.0.39.89:30301",#validator1]
+
+[rpc]
+disable = false
+port = 8540
+interface = "local"
+apis = ["web3","eth","net","personal","parity","parity_set","traces","rpc","parity_accounts"]
+
+[websockets]
+disable = true
+#Public node URL: enode://0b2514d11ae94da465845fef100311d5518f0c4051a4eded1d1ae3d6ae90390056281944cc7032658293533f02fa6c7281d9975d8030fb1e86af166a925b3327@10.0.39.89:30300
+[account]
+password = ["validator0.pwd"]
+
+[mining]
+engine_signer = "0x1dda6682821e90ce8ded5973cee3d7af5ac6fdf6"
+reseal_on_txs = "none"
+force_sealing = true
